@@ -1,0 +1,123 @@
+#devis_form {
+ position: relative;
+ z-index: 40; /* Above all */
+}
+#devis_form h2 {
+ color: #B4DC32;
+ text-align: center;
+}
+#devis_form label:not(:last-of-type) {
+ display: block;
+ margin-bottom: 4px;
+ margin-top: 6px;
+}
+#devis_form input:not([type="checkbox"]):not([type="submit"]), #devis_form textarea, #devis_form table {
+ width: 100%;
+}
+#devis_form textarea {
+ max-width: 100%;
+ min-width: 100%;
+}
+#devis_form input[type="checkbox"], label:last-of-type {
+ margin-top: 10px;
+}
+#devis_form table {
+ border-collapse: collapse;
+ font-size: 0.9em;
+ margin-top: 6px;
+}
+#devis_form table thead {
+ color: #FFFFFF;
+ text-align: center;
+}
+#devis_form table td, #devis_form table th {
+  border: 1px solid #FFFFFF;
+}
+#devis_form table tr:first-child th {
+  border-top: 0;
+}
+#devis_form table tr:last-child td {
+  border-bottom: 0;
+}
+#devis_form table tr td:first-child,
+#devis_form table tr th:first-child {
+  border-left: 0;
+}
+#devis_form table tr td:last-child,
+#devis_form table tr th:last-child {
+  border-right: 0;
+}
+#devis_form table td {
+ padding: 5px;
+}
+#devis_form table td:not(:first-child) {
+ text-align: right;
+}
+#devis_form input[type="submit"] {
+ visibility: hidden;
+}
+#devis_form .devis-button {
+ background-color: #B4DC32;
+ border: none;
+ border-bottom: 2px solid #DBF782;
+ border-top: 2px solid #DBF782;
+ color: #232323;
+ cursor: pointer;
+ display: inline-block;
+ font-size: 0.9em;
+ height: 100%;
+ margin-right: 20px;
+}
+#devis_form .input-required {
+ box-shadow: 0 0 1.5px 1px red; /* TODO */
+}
+#devis_form > div {
+ background-color: #393939;
+ display: none;
+ position: fixed;
+}
+#devis_div {
+ bottom: 36px;
+ overflow-y: auto;
+ max-height: calc(100% - 36px);
+ padding: 20px;
+ right: 20px;
+ width: 400px;
+}
+#devis_footer_div {
+ bottom: 0;
+ height: 36px;
+ left: 0;
+ text-align: right;
+ width: 100%;
+}
+/* Notification */
+#devis_notification {
+ display: none;
+ font-family: Helvetica, Arial, sans-serif;
+ font-size: 15px;
+ left: 0;
+ line-height: 40px;
+ position: fixed;
+ text-align: center;
+ top: 0;
+ width: 100%;
+ z-index: 50; /* Above all */
+}
+#devis_notification.devis-notification-success {
+ background-color: #B4DC32;
+ border: 2px solid #DBF782;
+ border-top: none;
+ color: #232323;
+}
+#devis_notification.devis-notification-error {
+ background-color: red; /* TODO */
+ border: 2px solid red;
+ border-top: none;
+ color: #FFFFFF;
+}
+@media screen and (max-width: 480px) {
+ #devis_div {
+  width: calc(100% - 80px);
+ }
+}

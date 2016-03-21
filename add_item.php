@@ -8,8 +8,11 @@ class Order_Add_Item
     
     public function add_item_html($atts, $content)
     {
-    	$atts = shortcode_atts(array('price' => 0), $atts); // TODO use $atts
-    	echo '<input class="w50p" type="number" name="quantity" min="0" placeholder="0" />';
+    	$atts = shortcode_atts(array('price' => 0), $atts);
+    	echo '<input class="addItemInput" type="number" name="quantity" min="0" placeholder="0"'
+    			. ' data-name="' . $content
+    			. '" data-price="' . $atts['price']
+    			. '" style="width: 50px;" />';
     }
 
 }

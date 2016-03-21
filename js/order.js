@@ -31,12 +31,12 @@ jQuery(function($) {
 				price : price
 			});
 		}
-		selectedItemChange();
+		selectedItemsChange();
 	}
 
 	var removeItem = function(itemName) {
 		selectedItems = _.reject(selectedItems, function(item) { return item.itemName == itemName; });
-		selectedItemChange();
+		selectedItemsChange();
 	}
 
 	var getTotal = function() {
@@ -49,7 +49,7 @@ jQuery(function($) {
 	}
 
 	// Private functions
-	function selectedItemChange() {
+	function selectedItemsChange() {
 		total = getTotal();
 
 		// set footer button text with nbItem and res

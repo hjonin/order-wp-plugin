@@ -1,6 +1,7 @@
 # List of shortcodes:#
 
 **order_add_item**:
+
 Allow user to add an item to cart with input number type
 
 Content is item name and "price" attribute

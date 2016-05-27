@@ -1,7 +1,7 @@
 var order = {}; // Namespace
 jQuery(function($) {
 
-	// Some initialization
+	// Some initialization FIXME if no cart
 	$("#devis_date").datepicker({ dateFormat : 'dd/mm/yy' }); // TODO with localisation (after i18n)?
 
 	// Register event handlers
@@ -160,10 +160,10 @@ jQuery(function($) {
 					document.getElementById("devis_form").reset();
 					hideDevisForm($("#devis_footer_button"));
 
-					// Reset all input numbers and row results TODO
-					// var $input = $( ".caterer-services table tbody input[type='number']" );
-					// $input.removeAttr('value');
-					// $input.trigger("change");
+					// Reset all input numbers and row results
+					$(".addItemInput").removeAttr('value').trigger('change');
+					selectedItems = [];
+					selectedItemsChange();
 				} else {
 					$('#devis_notification').attr('class', 'devis-notification-error').html(devisMessages.error);
 				}

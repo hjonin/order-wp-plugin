@@ -63,7 +63,7 @@ class Order_Show_Cart
 <div id="devis_notification"></div>
 
 <!-- set javascript ajaxUrl value when user is on traiteur page !-->
-<?php wp_localize_script('traiteur', 'ajaxUrl', admin_url('admin-ajax.php')); ?>
+<?php wp_localize_script('order', 'ajaxUrl', admin_url('admin-ajax.php')); ?>
 
 <?php
     }

@@ -13,7 +13,7 @@ function _ajax_devis() {
     $devisCopy = $_POST['devis_copy'];
 
     /** Start of config strings */
-    $to = 'bebop.toulouse@gmail.com'; // Recipient of the request
+    $to = get_option( 'admin_email' ); // Recipient of the request is wordpress admin
     $subject = 'Traiteur bebop commande pour le ' . $devisDate; // Subject for the E-mail
 
     // default messages

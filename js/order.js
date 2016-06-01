@@ -1,7 +1,7 @@
 var order = {}; // Namespace
 jQuery(function($) {
 
-	// Some initialization FIXME if no cart
+	// Some initialization TODO check cart availability - if $("#devis_form").length > 0
 	$("#devis_date").datepicker({ dateFormat : 'dd/mm/yy' }); // TODO with localisation (after i18n)?
 
 	// Register event handlers
@@ -11,8 +11,17 @@ jQuery(function($) {
 	$("#devis_send_button").click(submitBtnClickHandler);
 
 	// Hide the devis form when the user clicks out of the box
-	$(".content").click(function() { // FIXME more generic than .content
-		hideDevisForm($("#devis_footer_button"));
+	// http://stackoverflow.com/a/7385673
+	$(document).mouseup(function(e) {
+		var form = $("#devis_form");
+		var calendar = $(".ui-datepicker");
+
+		if (!form.is(e.target) // if the target of the click isn't the container (form)...
+				&& form.has(e.target).length === 0 // ... nor a descendant of the container (form)
+				&& !calendar.is(e.target) // ... nor the calendar
+				&& calendar.has(e.target).length === 0){ // ... nor a descendant of the calendar
+			hideDevisForm($("#devis_footer_button"));
+		}
 	});
 
 	// Private variables
